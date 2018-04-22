@@ -395,7 +395,7 @@ int MODULEMAINFUNC (int argc, char** argv){
 				srv.singlepacket = 1 + atoi(argv[i]+2);
 #ifdef WITHSPLICE
 			else
-				srv.usesplice = 1 + atoi(argv[i]+2);
+				if(*(argv[i]+2)) srv.usesplice = atoi(argv[i]+2);
 #endif
 			break;
 		 case 'o':
@@ -846,6 +846,9 @@ void srvinit(struct srvparam * srv, struct clientparam *param){
  srv->logdumpcli = conf.logdumpcli;
  srv->cbsock = INVALID_SOCKET; 
  srv->needuser = 1;
+#ifdef WITHSPLICE
+ srv->usesplice = 1;
+#endif
  memset(param, 0, sizeof(struct clientparam));
  param->srv = srv;
  param->version = srv->version;
