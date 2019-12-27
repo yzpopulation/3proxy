@@ -13,3 +13,6 @@ jobs:
       run: ln -s Makefile.Linux Makefile
     - name: make
       run: make
+    - name: pwd
+      run: pwd
+
