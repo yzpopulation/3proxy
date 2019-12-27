@@ -14,7 +14,7 @@ jobs:
     - name: make
       run: make
     - name: tar
-      run: tar -czvf 3proxy.tar.gz bin/
+      run: tar -czvf 3proxy.tar.gz bin
       
     - uses: actions/upload-artifact@v1
       with:
