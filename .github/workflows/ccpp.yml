@@ -15,4 +15,15 @@ jobs:
       run: make
     - name: pwd
       run: pwd
+    - name: cd
+      run: cd ..
+    - name: tar
+      run: tar -czvf 3proxy.tar.gz 3proxy/
+      
+    - uses: actions/upload-artifact@v1
+      with:
+        name: 3proxy.tar.gz
+        path: /home/runner/work/3proxy/3proxy.tar.gz
+      
+    
 
