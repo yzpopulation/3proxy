@@ -34,7 +34,7 @@ MAKEFILE = Makefile.openwrt-mips
 #LIBS = -lcrypto -lssl -ldl 
 LIBS = -ldl 
 #PLUGINS = SSLPlugin StringsPlugin TrafficPlugin PCREPlugin TransparentPlugin PamAuth
-PLUGINS = StringsPlugin TrafficPlugin PCREPlugin TransparentPlugin
+#PLUGINS = StringsPlugin TrafficPlugin PCREPlugin TransparentPlugin
 
 include Makefile.inc
 
