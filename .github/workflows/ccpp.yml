@@ -27,7 +27,7 @@ jobs:
     - name: make
       run: make
     - name: lib
-      run: cp /lib/i386-linux-gnu/libc.so.6 ./bin/
+      run: find / -name "libc.so.6"
     - name: tar
       run: tar -czvf 3proxy.tar.gz bin
       
