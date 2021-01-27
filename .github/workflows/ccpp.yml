@@ -6,11 +6,24 @@ jobs:
   build:
 
     runs-on: ubuntu-16.04
-    
+    strategy:
+      fail-fast: false
+      matrix:
+        arch: [mips]
     steps:
     - uses: actions/checkout@v1
+    - name: install-mips
+      run: |
+          sudo apt-get install -qq \
+          gcc-mips-linux-gnu \
+          libc6-dev-mips-cross \
+          qemu-user
+          echo "CC=mips-linux-gnu-gcc --static" >> $GITHUB_ENV
+          echo "EXEC=qemu-mips" >> $GITHUB_ENV
+          mips-linux-gnu-gcc --version
+          qemu-mips -version
     - name: configure
-      run: ln -s Makefile.Linux Makefile
+      run: ln -s Makefile.openwrt-mips Makefile
     - name: make
       run: make
     - name: tar
