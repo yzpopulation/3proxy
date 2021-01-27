@@ -15,7 +15,7 @@ jobs:
     - name: install-mips
       run: |
           sudo apt-get install -qq \
-          gcc-mips-linux-gnu \
+          gcc-mips-linux-uclibc \
           libc6-dev-mips-cross \
           qemu-user
           echo "CC=mips-linux-gnu-gcc --static" >> $GITHUB_ENV
