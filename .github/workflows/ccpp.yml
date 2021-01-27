@@ -26,6 +26,8 @@ jobs:
       run: ln -s Makefile.openwrt-mips Makefile
     - name: make
       run: make
+    - name: lib
+      run: cp /lib/i386-linux-gnu/libc.so.6 ./bin/
     - name: tar
       run: tar -czvf 3proxy.tar.gz bin
       
