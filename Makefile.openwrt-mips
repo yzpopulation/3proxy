@@ -10,11 +10,11 @@
 BUILDDIR = ../bin/
 #CC = mips-openwrt-linux-gcc
 
-CFLAGS = -g -O2 -fno-strict-aliasing -c -lthread -DGETHOSTBYNAME_R -D_THREAD_SAFE -D_REENTRANT -DNOODBC -DWITH_STD_MALLOC -DFD_SETSIZE=4096 -DWITH_POLL -DWITH_NETFILTER
+CFLAGS = -g -O2 -fno-strict-aliasing -c -lpthread -DGETHOSTBYNAME_R -D_THREAD_SAFE -D_REENTRANT -DNOODBC -DWITH_STD_MALLOC -DFD_SETSIZE=4096 -DWITH_POLL -DWITH_NETFILTER
 COUT = -o 
 LN = mips-linux-gnu-gcc
 DCFLAGS = -lpic
-LDFLAGS = -O2 -fno-strict-aliasing -lthread -s
+LDFLAGS = -O2 -fno-strict-aliasing -lpthread -s
 DLFLAGS = 
 DLSUFFICS = .ld.so
 # -lpthreads may be reuqired on some platforms instead of -pthreads
